@@ -2,6 +2,17 @@ dist: xenial
 language: python
 python:
   - "3.7"
+before_install:
+  - >-
+    openssl aes-256-cbc
+    -K $encrypted_6cb2737f72a1_key
+    -iv $encrypted_6cb2737f72a1_iv
+    -in .github/deploy_key.enc
+    -out .github/deploy_key
+    -d
+  - chmod 600 .github/deploy_key
+  - eval $(ssh-agent -s)
+  - ssh-add .github/deploy_key
 install:
   - pip install poetry
   - poetry install
@@ -17,3 +28,9 @@ deploy:
   on:
     branch: master
     condition: "$HAS_RELEASE = true"
+env:
+  global:
+    - PYPI_USERNAME=autopub
+    - secure: "jrsV38kmqEljCWl4f7x22UQ1ouDriEDWcUBNCL2cIFumsauk8YrK1IlYb3zTNYOkbL18Z/CLc0BTBb+Vq8y9dKGu9c1iudukhI6ViDzVknKwXI+c5e3r+FbTVYVAmyRPnUDTotAkr1n/kxhUgjVR0AVDWSPIFr7q7/vYRznv0WbDJDPchhhx5Q+xkXqtn9+hiRYiih8+glrZ7aDZFH4AITShrBlB2L8WLhARSu2LijKmkhCHqPGx4v/GHKr33KbIrqGsomaLyix+e7kCHdnMivK6eN0PXtMIMizJzP38ibepHAJ1gMjaJKtdPVGN4Sti0Ew+uJlzDX4gQ5hf3VohAqwHXDVpo+RnEhp6GaiKDivBKqSsFidsdZUwtMde4FlXTXESs0la9lQB2tBHJIdOGdJWoOaZoFuQHPu0/SxnNSu7k/XfDbXmSmKiwHY0ObXiCfRaBuuCeNFoFT0PmquyQrVi0glHlulLLv4Wykil6JMSldDI+L0ZolF2Bzs3SuAiLF3xqegxREZtl62UGq8xFPLgkqGr5ddcYOhuiT6MS745z5W4YxTtqxEbzaVfWcBip3InBmUaHqAG6Ity1PF96AkRGCmUFrC1jrCuy66xn4ifrUBW1+UvGibw6IzGL46HUnKK1Ihy7fsxceuNmGE8u1RSFAaqAx0NqOSEtuiZvAU="
+    - secure: "WFx2XIx062uacHdUMqejraRUSTl6CzhplAskqPjvaPj+4YQ0Cg725kYCkY+eMD8DDTOMrsDgHje6WxoBUenvdzn2xN7z3BSEf+EpcfoeEOeDCjatCvX8rLrvizTzo0rOhOgr+TIFcwYcO9pMpJzuCvYpN4gbbGoXaM8WOc9J1c6E+ogTkMqtKNcCwOpM0rFsG5S1zmVUwyPz6p11pGPzFQGqQ8xFsNYSe+rYiNF2DEMj84WRhmwlWRa74WDCM9kKqql6vq09a+5/GThxEwzBBMw3T06JS42iEdqRELQXmoCaD8EYq/iYbtw0gux2i/nAxV9Wo+DtPqzS0VnJ6/1X/yryhGPF9gQ3Eu0E1REJ3OJEFOVibiJQTx5dghZtNp3KEAu0FjRIpKhKtptDr8ZkZAjvrgCtIOk7e2wwbdF2miEG56CPBSCTA/QKK+zaDUMwFjlX8+PUQoXHsQqHIsaD9OC4xaHTUrTPQoFySTeKt/JCbZ7Fhm8KXgxTVLjKHCfingZmD21yzNImW67PF9Iva1DgrVc5qSxCql1xV8z79MhftMB/EKO1QDm1fJ+JqCDySi889GGr8qZmxov3bjp/Hyh/P7/Ygfsx8MaciPNaqArcUYD4BuEOEUy/X8cYwtoUDb2L84Z7h1XGRwtzOAySAzDwXyA96OIHmPA8OR0SN+g="
+
