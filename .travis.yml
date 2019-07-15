@@ -1,0 +1,19 @@
+dist: xenial
+language: python
+python:
+  - "3.7"
+install:
+  - pip install poetry
+  - poetry install
+script: pytest
+before_deploy:
+  - pip install --pre autopub
+  - pip install githubrelease
+deploy:
+  env:
+    - HAS_RELEASE=$(autopub check)
+  provider: script
+  script: autopub deploy
+  on:
+    branch: master
+    condition: "$HAS_RELEASE = true"
