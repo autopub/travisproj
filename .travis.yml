@@ -21,9 +21,7 @@ before_deploy:
   - chmod 600 .github/deploy_key
   - eval $(ssh-agent -s)
   - ssh-add .github/deploy_key
-  - git init .
-  - git remote add origin git@github.com:${TRAVIS_REPO_SLUG}.git
-  - git pull origin master
+  - git remote set-url origin git@github.com:${TRAVIS_REPO_SLUG}.git
 deploy:
   provider: script
   script: autopub deploy
