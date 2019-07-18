@@ -6,8 +6,11 @@ install:
   - pip install poetry
   - poetry install
 script: pytest
-after_success:
+before_deploy:
   - 'if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then travis_terminate 0; fi'
+  - pip install --pre autopub
+  - autopub check
+  - pip install githubrelease
   - >-
     openssl aes-256-cbc
     -K $encrypted_6cb2737f72a1_key
@@ -18,17 +21,11 @@ after_success:
   - chmod 600 .github/deploy_key
   - eval $(ssh-agent -s)
   - ssh-add .github/deploy_key
-before_deploy:
-  - pip install --pre autopub
-  - pip install githubrelease
 deploy:
-  env:
-    - HAS_RELEASE=$(autopub check)
   provider: script
   script: autopub deploy
   on:
     branch: master
-    condition: "$HAS_RELEASE = true"
 env:
   global:
     - PYPI_USERNAME=autopub
