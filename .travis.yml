@@ -21,6 +21,7 @@ before_deploy:
   - chmod 600 .github/deploy_key
   - eval $(ssh-agent -s)
   - ssh-add .github/deploy_key
+  - git clone --branch=master git@github.com:${TRAVIS_REPO_SLUG}.git $TRAVIS_REPO_SLUG
 deploy:
   provider: script
   script: autopub deploy
