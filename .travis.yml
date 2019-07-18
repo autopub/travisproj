@@ -8,9 +8,9 @@ install:
 script: pytest
 before_deploy:
   - 'if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then travis_terminate 0; fi'
+  - pip install githubrelease
   - pip install --pre autopub
   - autopub check
-  - pip install githubrelease
   - >-
     openssl aes-256-cbc
     -K $encrypted_6cb2737f72a1_key
