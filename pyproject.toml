@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "travisproj"
-version = "0.1.0"
+version = "0.1.1"
 description = "This is a test project."
 authors = ["BotPub <botpub@autopub.rocks>"]
 readme = "README.md"
@@ -23,7 +23,7 @@ say-hello = "travisproj.hello:hello"
 project-name = "TravisProj"
 git-username = "botpub"
 git-email = "botpub@autopub.rocks"
-version-strings = ["travisproj/__init__.py"]
+version-strings = ["setup.py", "travisproj/__init__.py"]
 pypi-url = "https://test.pypi.org/legacy/"
 build-system = "setuptools"
 

@@ -1,3 +1,3 @@
 Release type: patch
 
-First test of AutoPub integration with Travis.
+Yet more tweaks and Travis workarounds.
