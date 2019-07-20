@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+0.1.5 - 2019-07-20
+------------------
+
+* Add `TWINE_USERNAME` and `TWINE_PASSWORD` environment variables
+* Add missing PyPI metadata to `setup.py`
+
 0.1.4 - 2019-07-20
 ------------------
 
