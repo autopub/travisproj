@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+0.1.6 - 2019-07-20
+------------------
+
+Use global `TWINE_USERNAME` and `TWINE_PASSWORD` environment variables.
+
 0.1.5 - 2019-07-20
 ------------------
 
