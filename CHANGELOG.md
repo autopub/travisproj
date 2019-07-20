@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+0.1.8 - 2019-07-20
+------------------
+
+Try pushing via GITHUB_TOKEN instead of SSH key.
+
 0.1.7 - 2019-07-20
 ------------------
 
