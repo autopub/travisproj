@@ -23,7 +23,7 @@ before_deploy:
   - ssh-add .github/deploy_key
   - rm .github/deploy_key
   - git checkout ${TRAVIS_BRANCH}
-  - git remote set-url origin git@github.com:${TRAVIS_REPO_SLUG}.git
+  - git remote set-url origin https://$GITHUB_TOKEN@github.com/$TRAVIS_REPO_SLUG
 deploy:
   provider: script
   script: autopub deploy
