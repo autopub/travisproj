@@ -19,6 +19,9 @@ description = "\n".join([README, CHANGELOG])
 setup(
     name="travisproj",
     version=version,
+    url="https://github.com/autopub/travisproj",
+    author="Travis Project",
+    author_email="travisproj@example.com",
     description="This is a test project",
     long_description=description,
     long_description_content_type="text/markdown",
