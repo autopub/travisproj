@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+0.1.7 - 2019-07-20
+------------------
+
+Trigger new release to see if Twine’s output is UTF-8-encoded.
+
 0.1.6 - 2019-07-20
 ------------------
 
