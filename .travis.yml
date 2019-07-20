@@ -10,7 +10,6 @@ before_deploy:
   - 'if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then travis_terminate 0; fi'
   - pip install githubrelease
   - pip install --index-url https://test.pypi.org/simple/ --pre autopub
-  - autopub --version
   - autopub check
   - >-
     openssl aes-256-cbc
