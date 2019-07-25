@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+0.1.10 - 2019-07-25
+-------------------
+
+Use Travis v0 conditions, where `travis_terminate` command is allegedly available.
+
 0.1.9 - 2019-07-25
 ------------------
 
