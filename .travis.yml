@@ -11,6 +11,7 @@ before_deploy:
   - pip install githubrelease
   - pip install --index-url https://test.pypi.org/simple/ --pre autopub
   - autopub check
+  - pip install twine
   - >-
     openssl aes-256-cbc
     -K $encrypted_6cb2737f72a1_key
