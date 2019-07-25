@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+0.1.11 - 2019-07-25
+-------------------
+
+* Move `travis_terminate` from AutoPub to `.travis.yml`
+* Revert Travis v0 conditions opt-in
+
 0.1.10 - 2019-07-25
 -------------------
 
