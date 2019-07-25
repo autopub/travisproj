@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+0.1.9 - 2019-07-25
+------------------
+
+Install Twine during before_deploy phase.
+
 0.1.8 - 2019-07-20
 ------------------
 
