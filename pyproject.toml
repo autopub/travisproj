@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "travisproj"
-version = "0.1.11"
+version = "0.1.12"
 description = "This is a test project."
 authors = ["BotPub <botpub@autopub.rocks>"]
 readme = "README.md"
