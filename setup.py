@@ -3,7 +3,7 @@ from os.path import join
 from setuptools import find_packages, setup
 
 
-version = "0.1.12"
+version = "0.1.13"
 
 entry_points = {
     "console_scripts": [

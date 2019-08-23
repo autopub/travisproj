@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+0.1.13 - 2019-08-23
+-------------------
+
+Test with default subprocess encoding switched from ASCII to UTF-8.
+
 0.1.12 - 2019-07-28
 -------------------
 
